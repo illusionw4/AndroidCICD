@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v2.3.1
+
       - name: Setup Java JDK
         uses: actions/setup-java@v4.0.0
         with:
@@ -20,8 +21,9 @@ jobs:
 
       - name: Build With Gradle
         uses: ./gradlew build
+
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.0.0
         with:
             name: AndroidCICD.apk
-            path: app/build/outputs/apk/apk-debug.apk
+            path: app/build/outputs/apk/app-debug.apk
