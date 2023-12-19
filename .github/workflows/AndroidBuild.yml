@@ -19,11 +19,8 @@ jobs:
           java-version: '21'
           distribution: 'adopt'
 
-      - name: Setup Gradle
-        uses: eskatos/setup-gradle@v3
-
       - name: Build With Gradle
-        run: gradle build
+        run: ./gradlew build
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.0.0
